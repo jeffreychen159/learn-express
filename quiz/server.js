@@ -30,7 +30,7 @@ app.use(
 );
 app.use('/read/usernames', addMsgToRequest);
 
-app.get('/read/usernames', (req, res) => {
+app.get('/read/usernames/:name', (req, res) => {
   let usernames = req.users.map(function(user) {
     return {id: user.id, username: user.username};
   });
